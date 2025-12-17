@@ -96,12 +96,5 @@ function generatePlan() {
     `;
   }
 
-  plan += `
-    <p style="color: gray;">
-      ✨ 本平台透過多城市旅遊資料庫與規則式推薦邏輯，
-      模擬 AI 根據使用者偏好產生個人化旅遊行程。
-    </p>
-  `;
-
   resultDiv.innerHTML = plan;
 }
