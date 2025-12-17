@@ -51,12 +51,5 @@ function generatePlan() {
     `;
   }
 
-  plan += `
-    <p style="color: gray;">
-      ✨ 本行程由系統根據使用者輸入條件，
-      透過模擬 AI 推薦邏輯自動產生，僅供旅遊規劃參考。
-    </p>
-  `;
-
   resultDiv.innerHTML = plan;
 }
