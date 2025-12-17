@@ -1,3 +1,5 @@
+alert("script.js 已成功執行");
+
 function generatePlan() {
   const location = document.getElementById("location").value;
   const days = document.getElementById("days").value;
