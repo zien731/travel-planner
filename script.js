@@ -5,18 +5,29 @@ function generatePlan() {
   const resultDiv = document.getElementById("result");
 
   if (!location || !days || !preference) {
-    resultDiv.innerHTML = "⚠️ 請填寫所有欄位";
+    resultDiv.innerHTML = "⚠️ 請完整填寫旅遊地點、天數與偏好";
     return;
   }
 
-  resultDiv.innerHTML = `
-    <strong>📍 目的地：</strong>${location}<br>
-    <strong>🕒 天數：</strong>${days} 天<br>
-    <strong>❤️ 偏好：</strong>${preference}<br><br>
+  let plan = `<h3>📍 ${location} ${days} 天旅遊行程（偏好：${preference}）</h3>`;
 
-    <strong>✨ AI 旅遊行程建議：</strong><br>
-    Day 1：探索當地熱門景點與 ${preference}<br>
-    Day 2：安排特色活動與美食體驗<br>
-    Day 3：自由行程與放鬆行程
+  for (let i = 1; i <= days; i++) {
+    plan += `
+      <p>
+        <strong>Day ${i}：</strong><br>
+        上午：探索 ${location} 代表性景點<br>
+        下午：安排 ${preference} 相關活動<br>
+        晚上：體驗當地美食與夜生活
+      </p>
+    `;
+  }
+
+  plan += `
+    <p>
+      ✨ <em>此行程由 AI 根據使用者輸入條件自動產生，  
+      可作為旅遊規劃參考。</em>
+    </p>
   `;
+
+  resultDiv.innerHTML = plan;
 }
